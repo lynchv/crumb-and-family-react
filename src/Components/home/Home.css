@@ -1,0 +1,13 @@
+.main-title {
+    margin-top: 35vh;
+}
+
+.shop-now {
+    background-color: rgb(131, 17, 21);
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    font-weight: bold;
+}

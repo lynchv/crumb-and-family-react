@@ -4,7 +4,7 @@ h1 {
     font-size: 68px;
     font-weight: 300;
     line-height: 40px;
-    margin-top: 40vh;
+    margin-top: 80px;
 }
 
 h2 {
@@ -24,23 +24,15 @@ h2 {
     top: 0;
     bottom: 0;
     height: 100vh;
-    z-index: -10;
 }
 
 #hero-overlay {
     position: absolute;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.5);
     top: 0;
     bottom: 0;
     height: 100%;
     width: 100%;
-    z-index: -5;
-}
-
-.small-title {
-    color: white;
-    font-size: 24;
-    font: italic;
 }
 
 .nav-options {

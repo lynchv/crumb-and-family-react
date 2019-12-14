@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Shop = () => {
+const Shop = (props) => {
     return (
-        <i>My Shop content</i>
+        <h1>The shop for {props.items}</h1>
     )
 }
 

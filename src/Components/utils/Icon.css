@@ -21,25 +21,25 @@
 }
 
 .cupcake {
-    content: url('../../img/cupcake.png');
+    content: url('../../img/icons/cupcake.png');
 }
 
 .cookie {
-    content: url('../../img/cookie.svg');
+    content: url('../../img/icons/cookie.svg');
 }
 
 .about {
-    content: url('../../img/chef.svg');
+    content: url('../../img/icons/chef.svg');
 }
 
 .contact {
-    content: url('../../img/contact.svg')
+    content: url('../../img/icons/contact.svg')
 }
 
 .home {
-    content: url('../../img/home.svg')
+    content: url('../../img/icons/home.svg')
 }
 
 .checkout {
-    content: url('../../img/checkout.svg')
+    content: url('../../img/icons/checkout.svg')
 }
