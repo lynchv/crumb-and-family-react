@@ -1,0 +1,45 @@
+.icon {
+    display: inline-block;
+
+    color: white;
+    margin-right: 10px;
+}
+
+.small {
+    width: 20px;
+    height: 20px;
+}
+
+.medium {
+    width: 40px;
+    height: 40px;
+}
+
+.large {
+    width: 60px;
+    height: 60px;
+}
+
+.cupcake {
+    content: url('../img/cupcake.png');
+}
+
+.cookie {
+    content: url('../img/cookie.svg');
+}
+
+.about {
+    content: url('../img/chef.svg');
+}
+
+.contact {
+    content: url('../img/contact.svg')
+}
+
+.home {
+    content: url('../img/home.svg')
+}
+
+.checkout {
+    content: url('../img/checkout.svg')
+}
