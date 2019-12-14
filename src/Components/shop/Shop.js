@@ -1,8 +1,18 @@
 import React from 'react';
+import Item from './Item'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Shop = (props) => {
     return (
-        <h1>The shop for {props.items}</h1>
+        <Container>
+            <Row>
+                <Col>
+                    <Item />
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
