@@ -20,6 +20,10 @@ p {
    color: white; 
 }
 
+span {
+    color: white;
+}
+
 #hero {
     background-image: url('../img/pexels-photo-1028714.jpeg');
     background-size: cover;

@@ -1,0 +1,31 @@
+.shop-window{
+    height: 75vh;
+}
+
+.pagination {
+    float: right;
+}
+
+.item-image {
+    display: inline-block;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.lemon {
+    content: url('../../img/cupcakes/lemon.jpeg');
+}
+
+.vanilla {
+    content: url('../../img/cupcakes/vanilla.jpeg');
+}
+
+.strawberry {
+    content: url('../../img/cupcakes/strawberry.jpeg');
+}
+
+.red_velvet {
+    content: url('../../img/cupcakes/red_velvet.jpeg');
+}

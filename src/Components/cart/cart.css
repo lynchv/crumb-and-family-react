@@ -1,0 +1,4 @@
+.cart-window {
+    height: 75vh;
+    overflow-y: auto;
+}

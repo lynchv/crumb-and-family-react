@@ -7,7 +7,8 @@ import Icon from './utils/Icon'
 import { Link } from 'react-router-dom';
 
 
-const PageNavigation = () => {
+const PageNavigation = (props) => {
+
     return (
         <Container fluid={true}>
             <Row className="mt-3">
@@ -37,7 +38,10 @@ const PageNavigation = () => {
                     </ul>
                 </Col>
                 <Col xs={3} className="text-right">
-                    <Icon icon='checkout' size="medium"/>
+                    <Link to='/cart'>
+                        <span>{props.itemsInShop === 0 ? "" : props.itemsInShop}</span>
+                        <Icon icon='checkout' size="medium"/>
+                    </Link>
                 </Col>
             </Row>
         </Container>

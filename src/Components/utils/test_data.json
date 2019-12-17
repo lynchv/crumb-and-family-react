@@ -1,0 +1,45 @@
+{
+    "cupcakes": [{
+        "itemId": 1,
+        "display_name": "Lemon Cupcake",
+        "description": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+        "imageRef": "lemon"
+    }, {
+        "itemId": 2,
+        "display_name": "Vanilla Cupcake",
+        "description": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+        "imageRef": "vanilla"
+    }, {
+        "itemId": 3,
+        "display_name": "Strawberry Cupcake",
+        "description": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+        "imageRef": "strawberry"
+    }, {
+        "itemId": 4,
+        "display_name": "Red Velvet Cupcake",
+        "description": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+        "imageRef": "red_velvet"
+    }],
+    "cakes": [{
+        "itemId": 5,
+        "display_name": "Chocolate Cake",
+        "description": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+        "imageRef": "chocolate"
+    }, {
+        "itemId": 6,
+        "display_name": "Lemon Cake",
+        "description": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+        "imageRef": "lemon"
+    }],
+    "cookies": [{
+        "itemId": 7,
+        "display_name": "Chocolate Cake",
+        "description": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+        "imageRef": "vanilla"
+    }, {
+        "itemId": 8,
+        "display_name": "Lemon Cake",
+        "description": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+        "imageRef": "lemon"
+    }]
+}
