@@ -11,7 +11,7 @@ const Home = () => {
             <Row>
                 <Col md={{ span: 4, offset: 2 }} className="text-right">
                     <h1 className="main-title">Crumbs And Family</h1>
-                    <h2>Home baking made easy</h2>
+                    <h2 className="mt-4">Home baking made easy</h2>
                     <Link to="/cupcakes">
                         <button className="shop-now mt-2">Shop Now</button>
                     </Link>

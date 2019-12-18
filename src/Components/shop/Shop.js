@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
+import '../../img/image.css'
 import './shop.css'
-import Item from './Item';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import ShopItem from './ShopItem'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import Pagination from 'react-bootstrap/Pagination'
 
 import data from '../utils/test_data.json'
@@ -36,7 +37,7 @@ const Shop = (props) => {
             {items.slice((selectedPage-1)*3, selectedPage * 3).map( item => (
                 <Row key={item.itemId} className="mb-4">
                     <Col>
-                        <Item {...item} onAddToCart={onAddToCart}/>
+                        <ShopItem {...item} onAddToCart={onAddToCart}/>
                     </Col>
                 </Row>
             ))}

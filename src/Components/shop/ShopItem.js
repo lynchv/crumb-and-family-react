@@ -3,16 +3,19 @@ import './shop.css'
 import Media from 'react-bootstrap/Media'
 import Button from 'react-bootstrap/Button'
 
-const Item = (props) => {
+const ShopItem = (props) => {
 
     let item = {
         id: props.itemId,
+        displayName: props.display_name,
+        imageRef: props.imageRef,
+        price: props.price,
         quantity: 6
     }
 
     return (
         <Media>
-            <div className={`item-image mr-4 ${props.imageRef}`}>
+            <div className={`shop-item-image mr-4 ${props.imageRef}`}>
             </div>
             <Media.Body>
                 <h2> {props.display_name} </h2>
@@ -30,4 +33,4 @@ const Item = (props) => {
     )
 }
 
-export default Item
+export default ShopItem

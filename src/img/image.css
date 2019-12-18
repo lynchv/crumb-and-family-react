@@ -1,0 +1,15 @@
+.lemon {
+    content: url('./cupcakes/lemon.jpeg');
+}
+
+.vanilla {
+    content: url('./cupcakes/vanilla.jpeg');
+}
+
+.strawberry {
+    content: url('./cupcakes/strawberry.jpeg');
+}
+
+.red_velvet {
+    content: url('./cupcakes/red_velvet.jpeg');
+}

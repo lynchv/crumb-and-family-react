@@ -29,7 +29,7 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/contact" component={Contact}/>
-            <Route path="/cart" component={Cart}/>
+            <Route path="/cart" component={() => <Cart items={shopItems} onShopChange={onShopChange}/>}/>
             <Route path="/" component={Home}/>
           </Switch>
         </Router>
