@@ -24,8 +24,8 @@ function App() {
           <PageNavigation itemsInShop={shopItems.length}/>
           <Switch>
             <Route path="/home" component={Home}/>
-            <Route path="/cupcakes" render={() => <Shop itemsType='cupcakes' onShopChange={onShopChange}/>}/>
-            <Route path="/cookies" render={() => <Shop itemsType='cookies' onShopChange={onShopChange}/>}/>
+            <Route path="/cupcakes" render={() => <Shop itemsCategory='cupcakes' onShopChange={onShopChange}/>}/>
+            <Route path="/cookies" render={() => <Shop itemsCategory='cookies' onShopChange={onShopChange}/>}/>
             <Route path="/about" component={About}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/contact" component={Contact}/>

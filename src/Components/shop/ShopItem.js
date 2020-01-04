@@ -3,30 +3,17 @@ import './shop.css'
 import Media from 'react-bootstrap/Media'
 import Button from 'react-bootstrap/Button'
 
-const ShopItem = (props) => {
 
-    let item = {
-        id: props.itemId,
-        displayName: props.display_name,
-        imageRef: props.imageRef,
-        price: props.price,
-        quantity: 6
-    }
+const ShopItem = (props) => {
 
     return (
         <Media>
-            <div className={`shop-item-image mr-4 ${props.imageRef}`}>
-            </div>
+            <img className="shop-item-image mr-4" alt="Item" src={"data:image/jpeg;base64," + props.item.image}/>
             <Media.Body>
-                <h2> {props.display_name} </h2>
-                <p> {props.description} </p>
+                <h2> {props.item.name} </h2>
+                <p> {props.item.description} </p>
                 <div style={{float: "right"}}>
-                    <span>Select quantity: </span>
-                    <select className="ml-1 mr-4" onChange={(e) => item.quantity = e.target.value}>
-                        <option value={6}>x6</option>
-                        <option value={12}>x12</option>
-                    </select>
-                    <Button variant="primary" onClick={() => props.onAddToCart(item)}>Add to cart</Button>
+                    <Button variant="primary" onClick={() => props.onAddToCart(props.item)}>Add to cart</Button>
                 </div>
             </Media.Body>
         </Media>

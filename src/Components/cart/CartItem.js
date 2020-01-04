@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../img/image.css'
 import './cart.css'
 import Button from 'react-bootstrap/Button'
 import Media from 'react-bootstrap/Media'
