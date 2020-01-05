@@ -24,7 +24,7 @@ span {
 }
 
 #hero {
-    background-image: url('../img/pexels-photo-1028714.jpeg');
+    background-image: url('../assets/hero.jpeg');
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -43,7 +43,7 @@ span {
 }
 
 .nav-options {
-    display:inline-block;
+    display: inline-block;
     list-style: none;
     margin-right: 5em;
     color: white;
