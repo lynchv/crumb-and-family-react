@@ -1,13 +1,12 @@
 import React from 'react';
-import './App.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Icon from './utils/Icon'
+import Icon from '../utils/Icon'
 import { Link } from 'react-router-dom';
 
 
-const PageNavigation = (props) => {
+const NavigationUi = ({itemsInCart, onShopDisplay}) => {
 
     return (
         <Container fluid={true}>
@@ -21,11 +20,11 @@ const PageNavigation = (props) => {
                     <ul>
                     <Link to='/cupcakes'>
                         <Icon icon='cupcake'/>
-                        <li className="nav-options">Cupcakes</li>
+                        <li className="nav-options" onClick={() => onShopDisplay("cupcakes")}>Cupcakes</li>
                     </Link>
                     <Link to='/cookies'>
                         <Icon icon='cookie'/>
-                        <li className="nav-options">Cookies</li>
+                        <li className="nav-options" onClick={() => onShopDisplay("cookies")}>Cookies</li>
                     </Link>
                     <Link to='/about'>
                         <Icon icon='about'/>
@@ -39,7 +38,7 @@ const PageNavigation = (props) => {
                 </Col>
                 <Col xs={3} className="text-right">
                     <Link to='/cart'>
-                        <span>{props.itemsInShop === 0 ? "" : props.itemsInShop}</span>
+                        <span>{itemsInCart === 0 ? "" : itemsInCart}</span>
                         <Icon icon='checkout' size="medium"/>
                     </Link>
                 </Col>
@@ -48,4 +47,4 @@ const PageNavigation = (props) => {
     )
 }
 
-export default PageNavigation
+export default NavigationUi

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
-import PageNavigation from './AppNavigation'
+import Navigation from './navigation/Navigation'
 import Home from './home/Home'
 import Shop from './shop/Shop'
 import About from './about/About'
@@ -11,25 +11,19 @@ import Cart from './cart/Cart'
 
 function App() {
 
-  const [shopItems, setShopItems] = useState([])
-
-  const onShopChange = (item) => {
-    setShopItems(shopItems.concat(item))
-  }
-
   return (
     <div id="hero">
       <div id='hero-overlay'>
         <Router>
-          <PageNavigation itemsInShop={shopItems.length}/>
+          <Navigation />
           <Switch>
             <Route path="/home" component={Home}/>
-            <Route path="/cupcakes" render={() => <Shop itemsCategory='cupcakes' onShopChange={onShopChange}/>}/>
-            <Route path="/cookies" render={() => <Shop itemsCategory='cookies' onShopChange={onShopChange}/>}/>
+            <Route path="/cupcakes" render={() => <Shop shopCategory='cupcakes' />}/>
+            <Route path="/cookies" render={() => <Shop shopCategory='cookies' />}/>
             <Route path="/about" component={About}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/contact" component={Contact}/>
-            <Route path="/cart" component={() => <Cart items={shopItems} onShopChange={onShopChange}/>}/>
+            <Route path="/cart" component={() => <Cart />}/>
             <Route path="/" component={Home}/>
           </Switch>
         </Router>

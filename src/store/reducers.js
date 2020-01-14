@@ -13,6 +13,15 @@ export const allItems = (state = [], action) => {
     }
 }
 
+export const shopCategory = (state = "cupcakes", action) => {
+    switch (action.type) {
+        case C.SET_SHOP_CATEGORY:
+            return action.payload
+        default:
+            return state
+    }
+}
+
 export const cart = (state = [], action) => {
     switch (action.type) {
         case C.ADD_TO_CART:
@@ -28,5 +37,6 @@ export const cart = (state = [], action) => {
 
 export default combineReducers({
     allItems,
+    shopCategory,
     cart
 })

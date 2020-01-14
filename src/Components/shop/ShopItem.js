@@ -1,23 +1,21 @@
-import React from 'react';
-import './shop.css'
-import Media from 'react-bootstrap/Media'
-import Button from 'react-bootstrap/Button'
+import { connect } from "react-redux"
+import { addToCart } from "../../store/actions"
+import ShopItemUi from "./ShopItemUi"
 
-
-const ShopItem = (props) => {
-
-    return (
-        <Media>
-            <img className="shop-item-image mr-4" alt="Item" src={"data:image/jpeg;base64," + props.item.image}/>
-            <Media.Body>
-                <h2> {props.item.name} </h2>
-                <p> {props.item.description} </p>
-                <div style={{float: "right"}}>
-                    <Button variant="primary" onClick={() => props.onAddToCart(props.item)}>Add to cart</Button>
-                </div>
-            </Media.Body>
-        </Media>
-    )
+const mapStateToProps =  state => {
+    return {}
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAddToCart(itemId) {
+            dispatch(
+                addToCart(itemId)
+            )
+        }
+    }
+}
+
+const ShopItem = connect(mapStateToProps, mapDispatchToProps)(ShopItemUi)
 
 export default ShopItem
