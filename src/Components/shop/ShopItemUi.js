@@ -13,7 +13,7 @@ const ShopItem = ({item, onAddToCart}) => {
                 <h2> {item.name} </h2>
                 <p> {item.description} </p>
                 <div style={{float: "right"}}>
-                    <Button variant="primary" onClick={() => onAddToCart(item.item_id)}>Add to cart</Button>
+                    <Button variant="primary" onClick={() => onAddToCart(item)}>Add to cart</Button>
                 </div>
             </Media.Body>
         </Media>

@@ -1,33 +1,23 @@
-import React from 'react'
-import './cart.css'
-import CartItem from './CartItem'
-import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
-import formatMoney from '../utils/utils'
+import { connect } from "react-redux"
+import { removeFromCart } from "../../store/actions"
+import CartUi from "./CartUi"
 
-
-const Cart = (props) => {
-
-    let cartTotal = 0
-    props.items.map( item => (
-        cartTotal += item.price
-    ))
-
-    return (
-        <>
-            <Container>
-                <div className="mt-5 cart-window">
-                    {props.items.map(item => (
-                        <CartItem key={item.itemId} {...item} />
-                    ))}
-                </div>
-                <div className="mt-4 float-right">
-                    <span className="mr-3">Total: {formatMoney(cartTotal)}$</span>
-                    <Button variant="primary">Checkout</Button>
-                </div>
-            </Container>
-        </>
-    )
+const mapStateToProps =  state => {
+    return {
+        items: state.cart
+    }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onItemRemove(itemIndex) {
+            dispatch(
+                removeFromCart(itemIndex)
+            )
+        }
+    }
+}
+
+const Cart = connect(mapStateToProps, mapDispatchToProps)(CartUi)
 
 export default Cart

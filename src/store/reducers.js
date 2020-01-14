@@ -27,7 +27,8 @@ export const cart = (state = [], action) => {
         case C.ADD_TO_CART:
             return [...state, action.payload]        
         case C.REMOVE_FROM_CART:
-            return state.filter(item_id => item_id !== action.payload)     
+            const i = action.payload
+            return state.slice(0, i).concat(state.slice(i + 1, state.length))    
         case C.CLEAR_CART:
             return []
         default:

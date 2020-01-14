@@ -29,17 +29,17 @@ export const fetchItems = (category = '') => dispatch => {
 }
 
 
-export const addToCart = (itemId) => {
+export const addToCart = (item) => {
     return {
         type: C.ADD_TO_CART,
-        payload: itemId
+        payload: item
     }
 }
 
-export const removeFromCart = (itemId) => {
+export const removeFromCart = (itemIndex) => {
     return {
         type: C.REMOVE_FROM_CART,
-        payload: itemId
+        payload: itemIndex
     }
 }
 
