@@ -42,3 +42,7 @@
 .checkout {
     content: url('../../assets/icons/checkout.svg')
 }
+
+.settings {
+    content: url('../../assets/icons/settings.svg');
+}

@@ -1,0 +1,13 @@
+.formContainer {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    
+    align-items: stretch;
+    justify-content: center;
+}
+
+#loginForm {
+    margin-top: 10vh;
+    width: 300px;
+}

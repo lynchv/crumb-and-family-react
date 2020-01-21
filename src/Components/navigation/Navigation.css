@@ -1,0 +1,21 @@
+.nav-options {
+    display: inline-block;
+    list-style: none;
+    margin-right: 5em;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-bar {
+    height: 10vh;
+    width: 100%;
+    display:flex;
+
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+}

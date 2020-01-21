@@ -36,8 +36,18 @@ export const cart = (state = [], action) => {
     }
 }
 
+export const admin = (state = false, action) => {
+    switch (action.type) {
+        case C.SET_ADMIN:
+            return action.payload
+        default:
+            return state
+    }
+}
+
 export default combineReducers({
     allItems,
     shopCategory,
-    cart
+    cart,
+    admin
 })

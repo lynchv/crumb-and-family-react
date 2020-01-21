@@ -56,3 +56,10 @@ export const setShopCategory = (category) => {
         payload: category
     }
 }
+
+export const setAdmin = (status) => {
+    return {
+        type: C.SET_ADMIN,
+        payload: status
+    }
+}

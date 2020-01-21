@@ -41,11 +41,3 @@ span {
     height: 100%;
     width: 100%;
 }
-
-.nav-options {
-    display: inline-block;
-    list-style: none;
-    margin-right: 5em;
-    color: white;
-    cursor: pointer;
-}
