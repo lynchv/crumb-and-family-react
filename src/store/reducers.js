@@ -36,10 +36,12 @@ export const cart = (state = [], action) => {
     }
 }
 
-export const admin = (state = false, action) => {
+export const user = (state = {loggedIn: false}, action) => {
     switch (action.type) {
-        case C.SET_ADMIN:
-            return action.payload
+        case C.LOG_IN:
+            return {loggedIn: true, ...action.payload}
+        case C.LOG_OUT:
+            return {loggedIn: false}
         default:
             return state
     }
@@ -49,5 +51,5 @@ export default combineReducers({
     allItems,
     shopCategory,
     cart,
-    admin
+    user
 })

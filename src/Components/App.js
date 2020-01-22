@@ -41,7 +41,7 @@ const AppUi = ({isAdmin}) => {
 
 const mapStateToProps =  state => {
     return {
-        isAdmin: state.admin
+        isAdmin: state.user.loggedIn
     }
 }
 

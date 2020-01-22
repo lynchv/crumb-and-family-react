@@ -12,7 +12,8 @@ const constants = {
 	CLEAR_CART: "CLEAR_CART",
 
 	// For admins
-	SET_ADMIN: "SET_ADMIN"
+	LOG_IN: "LOG_IN",
+	LOG_OUT: "LOG_OUT",
 }
 
 export default constants

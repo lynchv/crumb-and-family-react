@@ -1,5 +1,16 @@
 import C from './actionType'
 
+/*
+    ITEM
+*/
+
+export const setShopCategory = (category) => {
+    return {
+        type: C.SET_SHOP_CATEGORY,
+        payload: category
+    }
+}
+
 export const addItem = (item) => {
     return {
         type: C.ADD_ITEM,
@@ -28,6 +39,9 @@ export const fetchItems = (category = '') => dispatch => {
 
 }
 
+/*
+    CART
+*/
 
 export const addToCart = (item) => {
     return {
@@ -49,17 +63,31 @@ export const clearCart = () => {
     }
 }
 
+/*
+    USER
+*/
 
-export const setShopCategory = (category) => {
-    return {
-        type: C.SET_SHOP_CATEGORY,
-        payload: category
-    }
-}
+export const logIn = ({email, password}) => dispatch => {
+    fetch('http://localhost:8080/user/login', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email: email, password: password})
+    })
+    .then(response => response.json())
+    .then( resp => {
+        console.log(resp)
+        if (resp.message === "") {
+            dispatch({
+                type: C.LOG_IN,
+                payload: resp.data
+            })
+        }
+    })
+    .catch( error => {
+        console.log("Captured an error when logging in")
+    })
 
-export const setAdmin = (status) => {
-    return {
-        type: C.SET_ADMIN,
-        payload: status
-    }
 }
