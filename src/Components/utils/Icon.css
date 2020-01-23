@@ -46,3 +46,7 @@
 .settings {
     content: url('../../assets/icons/settings.svg');
 }
+
+.user {
+    content: url('../../assets/icons/user.svg');
+}

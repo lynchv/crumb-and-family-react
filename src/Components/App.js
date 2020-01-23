@@ -13,7 +13,7 @@ import Settings from './settings/Settings'
 import Login from './login/Login'
 
 
-const AppUi = ({isAdmin}) => {
+const AppUi = ({isAdmin, loggedIn}) => {
 
     console.log(isAdmin)
 
@@ -30,7 +30,8 @@ const AppUi = ({isAdmin}) => {
                         <Route path="/contact" component={Contact} />
                         <Route path="/contact" component={Contact} />
                         <Route path="/cart" component={Cart} />
-                        <Route path="/settings" component={ isAdmin ? Settings : Login} />
+                        <Route path="/settings" component={ isAdmin ? Settings : Home} />
+                        <Route path="/login" component={ loggedIn ? Home : Login} />
                         <Route path="/" component={Home} />
                     </Switch>
                 </Router>
@@ -41,7 +42,8 @@ const AppUi = ({isAdmin}) => {
 
 const mapStateToProps =  state => {
     return {
-        isAdmin: state.user.loggedIn
+        isAdmin: state.user.is_admin ? state.user.is_admin : false,
+        loggedIn: state.user.loggedIn
     }
 }
 

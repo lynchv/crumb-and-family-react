@@ -1,10 +1,11 @@
 import NavigationUi from "./NavigationUi"
-import { setShopCategory } from "../../store/actions"
+import { setShopCategory, logOut } from "../../store/actions"
 import { connect } from "react-redux"
 
 const mapStateToProps =  state => {
     return {
-        itemsInCart: state.cart.length
+        itemsInCart: state.cart.length,
+        user: state.user
     }
 }
 
@@ -13,6 +14,12 @@ const mapDispatchToProps = dispatch => {
         onShopDisplay(category) {
             dispatch(
                 setShopCategory(category)
+            )
+        },
+
+        onLogOut() {
+            dispatch(
+                logOut()
             )
         }
     }

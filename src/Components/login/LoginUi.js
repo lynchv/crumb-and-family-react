@@ -29,10 +29,15 @@ const LoginUi = ({onLogin}) => {
                     <p>Password</p>
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-                <Button className="w-100 mt-2" variant="primary" type="submit">
+                <Button className="w-100 mt-3" variant="primary" type="submit">
                     Login
                 </Button>
             </Form>
+            <div className="form-footer mt-3">
+                <a href="/register">Register</a>
+                &ensp;|&ensp;
+                <a href="/recover">Forgot password</a>
+            </div>
         </div>
     )
 }

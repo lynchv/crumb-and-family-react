@@ -2,11 +2,11 @@ import React from 'react'
 import './Navigation.css'
 
 import Icon from '../utils/Icon'
+import UserDropdown from './userDropdown/UserDropdown'
 
 import { Link } from 'react-router-dom';
 
-
-const NavigationUi = ({itemsInCart, onShopDisplay}) => {
+const NavigationUi = ({user, itemsInCart, onShopDisplay, onLogOut}) => {
 
     return (
         <div className="nav-bar">
@@ -36,6 +36,7 @@ const NavigationUi = ({itemsInCart, onShopDisplay}) => {
                 </ul>
             </div>
             <div className="nav-content mr-4">
+                <UserDropdown user={user} onLogOut={onLogOut}/>
                 <Link to='/cart'>
                     <span>{itemsInCart === 0 ? "" : itemsInCart}</span>
                     <Icon icon='checkout' size="medium"/>

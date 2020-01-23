@@ -78,7 +78,6 @@ export const logIn = ({email, password}) => dispatch => {
     })
     .then(response => response.json())
     .then( resp => {
-        console.log(resp)
         if (resp.message === "") {
             dispatch({
                 type: C.LOG_IN,
@@ -88,6 +87,21 @@ export const logIn = ({email, password}) => dispatch => {
     })
     .catch( error => {
         console.log("Captured an error when logging in")
+    })
+}
+
+export const logOut = () => dispatch => {
+    fetch('http://localhost:8080/user/logout')
+    .then(response => response.json())
+    .then( resp => {
+        if (resp.message === "") {
+            dispatch({
+                type: C.LOG_OUT,
+            })
+        }
+    })
+    .catch( error => {
+        console.log("Captured an error when logging out")
     })
 
 }
