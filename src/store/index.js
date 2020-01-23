@@ -1,26 +1,15 @@
-import appReducer from "./reducers"
+import persistedReducer from "./reducers"
+
 import thunk from 'redux-thunk'
+import logger from 'redux-logger'
+import { persistStore } from 'redux-persist'
+
 import { createStore, applyMiddleware } from 'redux'
 
-const consoleMessage = store => next => action => {
 
-	console.groupCollapsed(`dispatching action => ${action.type}`)
+export const store = createStore (
+	persistedReducer,
+	applyMiddleware(thunk, logger)
+)
 
-	let { allItems, cart } = store.getState()
-
-	console.log(`
-
-		Number of Items: ${allItems.length}
-		allItems: ${allItems}
-        cart: ${cart}
-    
-    `)
-
-	console.groupEnd()
-
-	return next(action)
-}
-
-export default (initialState={}) => {
-	return applyMiddleware(thunk,consoleMessage)(createStore)(appReducer, initialState)
-}
+export const persistor = persistStore(store)

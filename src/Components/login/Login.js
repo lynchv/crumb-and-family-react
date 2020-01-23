@@ -8,9 +8,9 @@ const mapStateToProps =  state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onLogin(loginInfo) {
+        onLogin(email, password) {
             dispatch(
-                logIn(loginInfo)
+                logIn(email, password)
             )
         }
     }

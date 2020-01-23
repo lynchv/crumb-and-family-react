@@ -67,7 +67,7 @@ export const clearCart = () => {
     USER
 */
 
-export const logIn = ({email, password}) => dispatch => {
+export const logIn = (email, password) => dispatch => {
     fetch('http://localhost:8080/user/login', {
         method: 'POST',
         headers: {
@@ -83,6 +83,9 @@ export const logIn = ({email, password}) => dispatch => {
                 type: C.LOG_IN,
                 payload: resp.data
             })
+        }
+        else {
+            console.log(resp.message)
         }
     })
     .catch( error => {
@@ -102,6 +105,34 @@ export const logOut = () => dispatch => {
     })
     .catch( error => {
         console.log("Captured an error when logging out")
+    })
+}
+
+export const register = (userInfo) => dispatch => {
+    fetch('http://localhost:8080/user/', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userInfo)
+    })
+    .then(response => response.json())
+    .then( resp => {
+        if (resp.message === "") {
+            console.log("Loging in after successful register")
+            console.log(userInfo)
+            dispatch(
+                logIn(userInfo.email, userInfo.password)
+            )
+        }
+        else {
+            console.log(resp.message)
+        }
+    })
+    .catch( error => {
+        console.log("Captured an error when registering")
+        console.log(error)
     })
 
 }

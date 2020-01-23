@@ -1,5 +1,7 @@
 import C from './actionType'
 import { combineReducers } from 'redux'
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
 
 export const allItems = (state = [], action) => {
@@ -47,9 +49,17 @@ export const user = (state = {loggedIn: false}, action) => {
     }
 }
 
-export default combineReducers({
+const persistConfig = {
+    key: 'root',
+    storage,
+    whitelist: [cart, user]
+}
+
+const rootReducer = combineReducers({
     allItems,
     shopCategory,
     cart,
     user
 })
+
+export default persistReducer(persistConfig, rootReducer)

@@ -11,11 +11,10 @@ import Contact from './contact/Contact'
 import Cart from './cart/Cart'
 import Settings from './settings/Settings'
 import Login from './login/Login'
+import Register from './login/register';
 
 
 const AppUi = ({isAdmin, loggedIn}) => {
-
-    console.log(isAdmin)
 
     return (
         <div id="hero">
@@ -32,6 +31,7 @@ const AppUi = ({isAdmin, loggedIn}) => {
                         <Route path="/cart" component={Cart} />
                         <Route path="/settings" component={ isAdmin ? Settings : Home} />
                         <Route path="/login" component={ loggedIn ? Home : Login} />
+                        <Route path="/register" component={ loggedIn ? Home : Register} />
                         <Route path="/" component={Home} />
                     </Switch>
                 </Router>
