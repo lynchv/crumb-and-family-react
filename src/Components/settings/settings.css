@@ -1,0 +1,15 @@
+.settings-container {
+    width: 100%;
+    display: flex;
+
+    justify-content: space-evenly;
+}
+
+
+.create-item {
+    width: 40%;
+}
+
+.display-item {
+    width: 40%;
+}

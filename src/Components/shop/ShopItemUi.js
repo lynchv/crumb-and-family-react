@@ -8,7 +8,7 @@ const ShopItem = ({item, onAddToCart}) => {
 
     return (
         <Media>
-            <img className="shop-item-image mr-4" alt="Item" src={"data:image/jpeg;base64," + item.image}/>
+            <img className="shop-item-image mr-4" alt="Item" src={item.image}/>
             <Media.Body>
                 <h2> {item.name} </h2>
                 <p> {item.description} </p>

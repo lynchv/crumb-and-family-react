@@ -15,7 +15,7 @@ const LoginUi = ({onLogin}) => {
             }
         }
         onLogin(loginInfo.email, loginInfo.password)
-      }
+    }
 
     return (
         <div className="formContainer">

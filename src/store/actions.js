@@ -27,15 +27,37 @@ export const removeItem = (itemId) => {
 
 export const fetchItems = (category = '') => dispatch => {
     fetch('http://localhost:8080/item/' + category)
-        .then(response => response.json())
-        .then(allItems => {
-            allItems.data.forEach((item) => {
-                dispatch(addItem(item))
-            })
+    .then(response => response.json())
+    .then(allItems => {
+        allItems.data.forEach((item) => {
+            dispatch(addItem(item))
         })
-        .catch(error => {
-            console.log("Captured an error from API")
-        })
+    })
+    .catch(error => {
+        console.log("Captured an error from API")
+    })
+}
+
+export const createItem = (itemInfo) => dispatch => {
+    fetch('http://localhost:8080/item/', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        
+        body: JSON.stringify(itemInfo)
+    })
+    .then( response => response.json())
+    .then( resp => {
+        console.log(resp)
+        dispatch(fetchItems())
+    })
+    .catch(error => {
+        console.log("Captured an error when creating item")
+        console.log(error)
+    })
 
 }
 

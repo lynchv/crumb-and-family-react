@@ -29,7 +29,7 @@ const AppUi = ({isAdmin, loggedIn}) => {
                         <Route path="/contact" component={Contact} />
                         <Route path="/contact" component={Contact} />
                         <Route path="/cart" component={Cart} />
-                        <Route path="/settings" component={ isAdmin ? Settings : Home} />
+                        <Route path="/settings" component={Settings} /> 
                         <Route path="/login" component={ loggedIn ? Home : Login} />
                         <Route path="/register" component={ loggedIn ? Home : Register} />
                         <Route path="/" component={Home} />
@@ -39,6 +39,8 @@ const AppUi = ({isAdmin, loggedIn}) => {
         </div>
     )
 }
+
+/*component={ isAdmin ? Settings : Home}*/
 
 const mapStateToProps =  state => {
     return {
