@@ -1,5 +1,6 @@
 const constants = {
 	// For app items
+	SET_ITEMS: "SET_ITEMS",
 	ADD_ITEM: "ADD_ITEM",
 	REMOVE_ITEM: "REMOVE_DAY",
 

@@ -6,6 +6,8 @@ import storage from 'redux-persist/lib/storage'
 
 export const allItems = (state = [], action) => {
     switch (action.type) {
+        case C.SET_ITEMS:
+            return action.payload
         case C.ADD_ITEM:
             return [...state, action.payload]            
         case C.REMOVE_ITEM:

@@ -11,10 +11,10 @@ export const setShopCategory = (category) => {
     }
 }
 
-export const addItem = (item) => {
+export const setItems = (items) => {
     return {
-        type: C.ADD_ITEM,
-        payload: item
+        type: C.SET_ITEMS,
+        payload: items
     }
 }
 
@@ -28,13 +28,21 @@ export const removeItem = (itemId) => {
 export const fetchItems = (category = '') => dispatch => {
     fetch('http://localhost:8080/item/' + category)
     .then(response => response.json())
-    .then(allItems => {
-        allItems.data.forEach((item) => {
-            dispatch(addItem(item))
-        })
+    .then(resp => {
+        if (resp.message === "") {
+            dispatch(
+                setItems(resp.data)
+            )
+        }
+        else {
+            console.log(resp)
+            // TODO error
+        }
+
     })
     .catch(error => {
-        console.log("Captured an error from API")
+        console.log("Captured an error when fetching")
+        console.log(error)
     })
 }
 
@@ -46,19 +54,47 @@ export const createItem = (itemInfo) => dispatch => {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-        
         body: JSON.stringify(itemInfo)
     })
     .then( response => response.json())
     .then( resp => {
-        console.log(resp)
-        dispatch(fetchItems())
+        if (resp.message === "") {
+            dispatch(fetchItems())
+        }
+        else {
+            console.log(resp)
+            // TODO error
+        }
     })
     .catch(error => {
         console.log("Captured an error when creating item")
         console.log(error)
     })
+}
 
+export const deleteItem = (itemId) => dispatch => {
+    fetch('http://localhost:8080/item/' + itemId, {
+        method: 'DELETE',
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+    })
+    .then( response => response.json())
+    .then( resp => {
+        if (resp.message === "") {
+            dispatch(fetchItems())
+        }
+        else {
+            console.log(resp)
+            // TODO error
+        }
+    })
+    .catch(error => {
+        console.log("Captured an error when deleting item")
+        console.log(error)
+    })
 }
 
 /*
@@ -92,6 +128,7 @@ export const clearCart = () => {
 export const logIn = (email, password) => dispatch => {
     fetch('http://localhost:8080/user/login', {
         method: 'POST',
+        credentials: 'include',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -108,6 +145,7 @@ export const logIn = (email, password) => dispatch => {
         }
         else {
             console.log(resp.message)
+            // TODO error
         }
     })
     .catch( error => {
@@ -116,7 +154,9 @@ export const logIn = (email, password) => dispatch => {
 }
 
 export const logOut = () => dispatch => {
-    fetch('http://localhost:8080/user/logout')
+    fetch('http://localhost:8080/user/logout', {
+        credentials: 'include',
+    })
     .then(response => response.json())
     .then( resp => {
         if (resp.message === "") {
