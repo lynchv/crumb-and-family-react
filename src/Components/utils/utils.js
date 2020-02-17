@@ -1,5 +1,8 @@
+import React, { useEffect, useState } from 'react'
+import Pagination from 'react-bootstrap/Pagination'
 
-function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
+
+export const formatMoney = (amount, decimalCount = 2, decimal = ".", thousands = ",") => {
     try {
         decimalCount = Math.abs(decimalCount);
         decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
@@ -16,4 +19,30 @@ function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
 }
 
 
-export default formatMoney
+export const PageCount = ({itemTotal, itemsPerPage, onPageClick}) => {
+
+    const [pagination, setPagination] = useState([])
+    const [selectedPage, setSelectedPage] = useState(1)
+
+    useEffect(() => {
+        const pages = []
+        for (let x = 1; x <= Math.ceil(itemTotal / itemsPerPage); x++) {
+            pages.push(
+                <Pagination.Item
+                    key={x}
+                    active={ selectedPage === x ? true : false }
+                    onClick={() => {setSelectedPage(x); onPageClick(x)}}
+                >
+                {x}
+                </Pagination.Item>
+            );
+        }
+        setPagination(pages)
+    }, [itemTotal, itemsPerPage, selectedPage, onPageClick]);
+
+    return (
+        <Pagination>{pagination}</Pagination>
+    )
+
+
+}

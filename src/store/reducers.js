@@ -3,6 +3,17 @@ import { combineReducers } from 'redux'
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
+export const notification = (state = {title:"", message:""}, action) => {
+    switch (action.type) {
+        case C.SET_NOTIFICATION:
+            return action.payload
+        case C.CLEAR_NOTIFICATION:
+            return {title:"", message:""}
+        default:
+            return state
+    }
+}
+
 
 export const allItems = (state = [], action) => {
     switch (action.type) {
@@ -12,6 +23,15 @@ export const allItems = (state = [], action) => {
             return [...state, action.payload]            
         case C.REMOVE_ITEM:
             return state.filter(item => item.item_id !== action.payload)     
+        default:
+            return state
+    }
+}
+
+export const itemCategories = (state = [], action) => {
+    switch (action.type) {
+        case C.SET_ITEM_CATEGORIES:
+            return action.payload
         default:
             return state
     }
@@ -54,11 +74,13 @@ export const user = (state = {loggedIn: false}, action) => {
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: [cart, user]
+    whitelist: [cart]
 }
 
 const rootReducer = combineReducers({
+    notification,
     allItems,
+    itemCategories,
     shopCategory,
     cart,
     user

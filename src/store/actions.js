@@ -1,6 +1,23 @@
 import C from './actionType'
 
 /*
+    NOTIFICATION
+*/
+
+export const setNotification = (title, message) => {
+    return {
+        type: C.SET_NOTIFICATION,
+        payload: {title: title, message: message}
+    }
+}
+
+export const clearNotification = () => {
+    return {
+        type: C.CLEAR_NOTIFICATION,
+    }
+}
+
+/*
     ITEM
 */
 
@@ -25,6 +42,35 @@ export const removeItem = (itemId) => {
     }
 }
 
+export const setItemCategories = (categories) => {
+    return {
+        type: C.SET_ITEM_CATEGORIES,
+        payload: categories
+    }
+}
+
+export const fetchItemCategories = () => dispatch => {
+    fetch('http://localhost:8080/item/categories')
+    .then(response => response.json())
+    .then(resp => {
+        if (resp.message === "") {
+            dispatch(
+                setItemCategories(resp.data)
+            )
+        }
+        else {
+            dispatch(
+                setNotification("Error", resp.message)
+            )
+        }
+
+    })
+    .catch(error => {
+        console.log("Captured an error when fetching")
+        console.log(error)
+    })
+}
+
 export const fetchItems = (category = '') => dispatch => {
     fetch('http://localhost:8080/item/' + category)
     .then(response => response.json())
@@ -35,8 +81,9 @@ export const fetchItems = (category = '') => dispatch => {
             )
         }
         else {
-            console.log(resp)
-            // TODO error
+            dispatch(
+                setNotification("Error", resp.message)
+            )
         }
 
     })
@@ -62,8 +109,9 @@ export const createItem = (itemInfo) => dispatch => {
             dispatch(fetchItems())
         }
         else {
-            console.log(resp)
-            // TODO error
+            dispatch(
+                setNotification("Error", resp.message)
+            )
         }
     })
     .catch(error => {
@@ -87,8 +135,9 @@ export const deleteItem = (itemId) => dispatch => {
             dispatch(fetchItems())
         }
         else {
-            console.log(resp)
-            // TODO error
+            dispatch(
+                setNotification("Error", resp.message)
+            )
         }
     })
     .catch(error => {
@@ -125,7 +174,7 @@ export const clearCart = () => {
     USER
 */
 
-export const logIn = (email, password) => dispatch => {
+export const logIn = (email, password, showErrors = true) => dispatch => {
     fetch('http://localhost:8080/user/login', {
         method: 'POST',
         credentials: 'include',
@@ -144,8 +193,11 @@ export const logIn = (email, password) => dispatch => {
             })
         }
         else {
-            console.log(resp.message)
-            // TODO error
+            if (showErrors) {
+                dispatch(
+                    setNotification("Error", resp.message)
+                )
+            }
         }
     })
     .catch( error => {
@@ -163,6 +215,11 @@ export const logOut = () => dispatch => {
             dispatch({
                 type: C.LOG_OUT,
             })
+        }
+        else {
+            dispatch(
+                setNotification("Error", resp.message)
+            )
         }
     })
     .catch( error => {
@@ -189,7 +246,9 @@ export const register = (userInfo) => dispatch => {
             )
         }
         else {
-            console.log(resp.message)
+            dispatch(
+                setNotification("Error", resp.message)
+            )
         }
     })
     .catch( error => {
@@ -198,3 +257,4 @@ export const register = (userInfo) => dispatch => {
     })
 
 }
+

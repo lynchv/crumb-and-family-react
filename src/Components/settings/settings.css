@@ -13,3 +13,20 @@
 .display-items {
     width: 40%;
 }
+
+.item-body {
+    display: flex;
+    flex-direction: row;
+
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-remove {
+    display: flex;
+}

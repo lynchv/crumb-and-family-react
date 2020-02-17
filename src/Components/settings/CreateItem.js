@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap'
 import { connect } from "react-redux"
 import { createItem } from '../../store/actions'
 
-const CreateItemUi = ({onItemCreate}) => {
+const CreateItemUi = ({itemCategories, onItemCreate}) => {
 
     const [uploadedImage, setUploadedImage] = useState("")
 
@@ -44,7 +44,12 @@ const CreateItemUi = ({onItemCreate}) => {
 
             <Form.Group controlId="category">
                 <p>Category</p>
-                <Form.Control placeholder="Enter Item Category" />
+                <Form.Control as="select" placeholder="" defaultValue="">
+                    <option disabled value="">Select Item Category</option>
+                    {itemCategories.map((category, i) => (
+                        <option key={i}>{category}</option>
+                    ))}
+                </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="description">
@@ -70,7 +75,9 @@ const CreateItemUi = ({onItemCreate}) => {
 }
 
 const mapStateToProps =  state => {
-    return {}
+    return {
+        itemCategories: state.itemCategories
+    }
 }
 
 const mapDispatchToProps = dispatch => {

@@ -3,7 +3,7 @@ import './cart.css'
 import CartItem from './CartItem'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
-import formatMoney from '../utils/utils'
+import { formatMoney } from '../utils/utils'
 
 
 const Cart = ({items}) => {

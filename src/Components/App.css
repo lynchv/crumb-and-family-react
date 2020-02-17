@@ -19,9 +19,9 @@ p {
    color: white; 
 }
 
-span {
+/* span {
     color: white;
-}
+} */
 
 #hero {
     background-image: url('../assets/hero.jpeg');

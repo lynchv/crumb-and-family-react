@@ -5,7 +5,7 @@ import Media from 'react-bootstrap/Media'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import formatMoney from '../utils/utils'
+import { formatMoney } from '../utils/utils'
 
 const CartItem = ({index, item, onItemRemove}) => {
 

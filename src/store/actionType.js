@@ -4,6 +4,9 @@ const constants = {
 	ADD_ITEM: "ADD_ITEM",
 	REMOVE_ITEM: "REMOVE_DAY",
 
+	// Item categories
+	SET_ITEM_CATEGORIES: "SET_ITEM_CATEGORIES",
+
 	// To know which item type to display
 	SET_SHOP_CATEGORY: "SET_SHOP_CATEGORY",
 
@@ -15,6 +18,10 @@ const constants = {
 	// For admins
 	LOG_IN: "LOG_IN",
 	LOG_OUT: "LOG_OUT",
+
+	// For Errors
+	SET_NOTIFICATION: "SET_NOTIFICATION",
+	CLEAR_NOTIFICATION: "CLEAR_NOTIFICATION"
 }
 
 export default constants
